@@ -1,10 +1,10 @@
-package com.diego.upload.file.api;
+package com.diego.fileupload;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class FileuploadApplicationTests {
 
 	@Test
 	void contextLoads() {

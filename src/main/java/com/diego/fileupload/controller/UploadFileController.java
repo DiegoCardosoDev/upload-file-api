@@ -1,23 +1,27 @@
-package controller;
+package com.diego.fileupload.controller;
 
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.UUID;
 
+
+@Data
 @RestController
 @RequestMapping(value = "/api/upload", produces = {"application/json"})
 @Slf4j
 @CrossOrigin("*")
 public class UploadFileController {
+
+
 
     private final   String pathArquivos;
 
@@ -27,9 +31,11 @@ public class UploadFileController {
 
 
     @PostMapping(value = "/arquivo")
-    public ResponseEntity<String> fileSave(@RequestParam ("file") MultipartFile file){
+    public ResponseEntity<String> fileSave(@RequestParam("file") MultipartFile file){
 
         log.info("recebendo Arquivo:", file.getOriginalFilename());
+
+
 
         var caminho = pathArquivos + UUID.randomUUID() + "." + extractExtesion(file.getOriginalFilename());
 
@@ -55,4 +61,6 @@ public class UploadFileController {
         int i = fileName.lastIndexOf(".");
         return fileName.substring(i + 1);
     }
+
+
 }

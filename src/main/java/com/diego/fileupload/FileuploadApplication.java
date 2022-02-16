@@ -1,13 +1,13 @@
-package com.diego.upload.file.api;
+package com.diego.fileupload;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class FileuploadApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(FileuploadApplication.class, args);
 	}
 
 }
